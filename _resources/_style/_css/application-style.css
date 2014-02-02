@@ -1,0 +1,4 @@
+/*css application style rules*/ 
+	.page-wrapper { position: relative; } 
+	form { border: 1px solid #000 } 
+	input[type="text"] { border: 1px solid #000; padding: 2 block; width: 100; } 

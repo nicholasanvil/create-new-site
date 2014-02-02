@@ -1,0 +1,22 @@
+@charset "utf-8";  
+/* Responsive CSS Rule Index for targeting ALL devices by physical display attributes  
+as opposed to targeting each device by its handle and ensuring a completely controlled  
+and consistant user experience - Nicholas Abrams */  
+/*  
+// Style rules based on device screen width 
+@import url(small-mobile.css) (min-width:320px);  
+@import url(medium-mobile.css) (min-width:480px);  
+@import url(large-tablets.css) (min-width:600px);  
+@import url(small-screens.css) (min-width:801px);  
+@import url(medium-screens.css) (min-width:1025px);  
+@import url(large-screens.css) (min-width:1281px);  
+ // Style rules based on higher than avg pixel density  
+@import url(high-pix-density.css)min--moz-device-pixel-ratio: 1.5)(-o-min-device-pixel-ratio: 1.5/1)(-webkit-min-device-pixel-ratio: 1.5)(min-device-pixel-ratio: 1.5);  
+ // Style rules based on high pixel density  
+@import url(highest-pix-density.css)min--moz-device-pixel-ratio: 2)(-o-min-device-pixel-ratio: 2/1)(-webkit-min-device-pixel-ratio: 2)(min-device-pixel-ratio: 2); 
+ // Style rules based on screen orientation 
+@import url(orientation-landscape.css) (orientation: landscape); 
+@import url(orientation-portrait.css) (orientation: portrait); 
+ // Style rules for print media 
+@import url(large-screens.css) print; 
+ */ 

@@ -1,7 +1,6 @@
 @echo on
 color f0
 cls
-
 echo Now creating main index.html view layer file
 fsutil file createnew index.html 0
 echo Now writing data to index.html
@@ -22,15 +21,16 @@ echo				^<input type="submit"^> >> index.html
 echo			^</form^> >> index.html
 echo			^<p^>Welcome to the Web 2.0 Framework^</p^> >> index.html
 echo			^</div^> >> index.html
-echo			^<script src="http://http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js/"^>  ^</script^> >> index.html
-echo			^<script src="_resources/_script/"^>  ^</script^> >> index.html
+echo             ^<!-- load js libs 2 of the most common cdn's with a localized fallback --^> >> index.html
+echo              	^<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"^> ^</script^> >> index.html
+echo        ^<!--/ load js libs --^> >> index.html
+echo        ^<script type='text/javascript' src='_resources/_script/_libs/modernizr.js'^> ^</script^> >> index.html
+echo        ^<!-- tracking --^> >> index.html
+echo        <^!-- /tracking --^> >> index.html
 echo		^</body^> >> index.html
 echo	^</html^> >> index.html
-
-
-rem Now creating the processing layer process.php
+  rem Now creating the processing layer process.php
 fsutil file createnew process.php 0
-
 md _resources
 	cd _resources
 		md _style
@@ -41,8 +41,9 @@ md _resources
 				fsutil file createnew application-style.css 0
 				rem inject application-style.css
 				echo /*css application style rules*/ >> application-style.css
+				echo 	.page-wrapper { position: relative; } >> application-style.css
 				echo 	form { border: 1px solid #000 } >> application-style.css
-				echo 	input[type=text] { border: 1px solid #000; padding: 2%; display: block; width: 100%; } >> application-style.css
+				echo 	input[type="text"] { border: 1px solid #000; padding: 2%; display: block; width: 100%; } >> application-style.css
 					rem create media-queries.css
 				fsutil file createnew media-queries.css 0
 					rem inject media-queries.css
