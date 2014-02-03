@@ -1,0 +1,77 @@
+<style>
+.main-nav  * {
+	padding: 0;
+	margin: 0;
+	zoom: 1;
+	font: normal;
+	list-style: none;
+/*	border: 1px solid #ccc;*/
+}
+nav.main-nav ul {
+	width: 100%;
+	display: block;
+	text-align: center;
+}
+.main-nav ul li {
+	display: inline-block;
+	text-align: center;
+}
+nav div.mobile-menu-button {
+	display: none;
+	background-color: #000;
+	color: #fff;
+	font-size: 2.2em;
+}	
+@media all and (min-width : 880px) {
+.main-nav ul li {
+		display: inline-block !important; /* <= Must stay in order to restore from mobile menu items to full site nav on window.restore! */
+	}	
+}
+@media all and (max-width : 880px) {
+.main-nav ul li {
+		display: none;
+		width: 100% !important;
+	}
+	nav div.mobile-menu-button {
+		display: block;
+		width: 100%;
+		text-align: center;
+		cursor: pointer;
+	}
+}
+
+</style>
+
+<!-- MODULE NAVIGATIONAL MENU BEGIN -->
+<!-- navigation module which changes dynamically based on (2) conditions:
+	1) The size of the viewers viewport (responsive mobile menu built in, default trigger is set to 880 pixels wide 
+    2) If in mobile, the navigation items will hide themselves until envoked via click which then toggles the items to show in 'mobile mode' -->
+    
+<nav class="main-nav">
+	<div class="mobile-menu-button">
+    </div>
+    <ul>
+    	<li>Item</li>
+        <li>Item</li>
+    	<li>Item</li>
+        <li>Item</li>
+
+    </ul>
+</nav>
+<!-- / MODULE NAVIGATIONAL MENU END -->
+
+<script src="http://code.jquery.com/jquery-1.10.2.min.js">
+</script>
+<script>
+$(function(){
+	MobileMenuButton.html("&#9776;");
+	NavItems.css("width", 100/NavItemsTotal-.45+ 
+	/* to compinsate for the border the compatible way */"%");
+});
+var NavItemsTotal = $('.main-nav ul').children().size(); //<= count slides as children and report an int value
+var NavItems = $(".main-nav ul li");
+var MobileMenuButton = $(".mobile-menu-button");
+	MobileMenuButton.on("click", function() {
+		NavItems.toggle("slow");		
+});	
+</script>
